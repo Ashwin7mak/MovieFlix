@@ -1,0 +1,25 @@
+.comments {
+  margin-top: 2em;
+  margin-left: 10em;
+  margin-right: 10em;
+  padding: 1em;
+  border: 1px solid white;
+}
+
+.user-comments {
+  max-height: 40em;
+  overflow: auto;
+}
+.comment {
+  padding: 1em;
+}
+
+.new-comment textarea {
+  height: 5em;
+  width: 100%;
+  margin-top: 1em;
+  color: black;
+}
+.new-comment input{
+  background-color: grey;
+}

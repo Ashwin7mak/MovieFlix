@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>MovieFlix</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/browse.css">
+</head>
+
+<body ng-app="catalog" ng-controller="catalogCtrl">
+<header>
+  <div class="logo"><a href="browse.html">MOVIEFLIX</div>
+  <div class="btn-group" uib-dropdown>
+    <button id="btn-browse" type="button" class="btn btn-primary" uib-dropdown-toggle>
+      Browse <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+      <li role="menuitem"><a href="browse.html">Movies</a></li>
+      <li role="menuitem"><a href="browse.html">TV Series</a></li>
+      <li class="divider"></li>
+    </ul>
+  </div>
+  <div class="btn-group" uib-dropdown>
+    <button id="btn-sort" type="button" class="btn btn-primary" uib-dropdown-toggle>
+      Sort <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+      <li role="menuitem"><a href="browse.html">IMDb Rating</a></li>
+      <li role="menuitem"><a href="browse.html">Year</a></li>
+      <li role="menuitem"><a href="browse.html">IMDb Votes</a></li>
+    </ul>
+  </div>
+  <div class="user"><a href="signin.html">Log out</a></div>
+  <div class="search glyphicon glyphicon-search"><input type="search" placeholder="Search..." ng-model="searchText" /></div>
+</header>
+
+<div>
+  <nav>
+    <ul class="pager">
+      <li class="previous {{allowPrev()}}">
+        <a href="#" ng-click="gotoPrev()"><span aria-hidden="true">&larr;</span> Prev</a>
+      </li>
+      <li class="next {{allowNext()}}">
+        <a href="#" ng-click="gotoNext()">Next <span aria-hidden="true">&rarr;</span></a>
+      </li>
+    </ul>
+  </nav>
+  <div class="catalog">
+    <div ng-repeat="movie in movielist | filter:searchText" class="movie">
+      <div class="poster">
+        <img ng-src="{{movie.Poster}}" alt="{{movie.Title}}" ng-click="showDetails(movie)"/>
+      </div>
+      <div>{{movie.Title}} ({{movie.Year}})</div>
+    </div>
+  </div>
+
+  <div class="movie-details alert alert-dismissible {{enableDetails}}">
+    <span class="glyphicon glyphicon-remove" ng-click="closeDetails()"></span>
+    <h2>{{selectedMovie.Title}} ({{selectedMovie.Year}})</h2>
+    <span class="starRating">
+                    <input id="rating5" type="radio" name="rating" value="5" ng-model="selectedMovie.MovieFlixRating">
+                    <label for="rating5">5</label>
+                    <input id="rating4" type="radio" name="rating" value="4" ng-model="selectedMovie.MovieFlixRating">
+                    <label for="rating4">4</label>
+                    <input id="rating3" type="radio" name="rating" value="3" ng-model="selectedMovie.MovieFlixRating">
+                    <label for="rating3">3</label>
+                    <input id="rating2" type="radio" name="rating" value="2" ng-model="selectedMovie.MovieFlixRating">
+                    <label for="rating2">2</label>
+                    <input id="rating1" type="radio" name="rating" value="1" ng-model="selectedMovie.MovieFlixRating">
+                    <label for="rating1">1</label>
+                </span>
+    <div>{{selectedMovie.Runtime}}</div>
+    <div>{{selectedMovie.Genre}}</div>
+    <div>Directed by: {{selectedMovie.Director}}</div>
+    <div>Starring {{selectedMovie.Actors}}</div>
+    <div>{{selectedMovie.Plot}}</div>
+    <div>MovieFlix Rating: {{selectedMovie.MovieFlixRating}}</div>
+    <div><a href="http://www.imdb.com/title/{{selectedMovie.imdbID}}/">IMDb Rating: {{selectedMovie.imdbRating}}</a></div>
+    <div><a href="comments.html">Comments/Reviews</a></div>
+    <div class="admin-actions {{isAdmin}}">
+      <a href="admin.html#?imdbID={{selectedMovie.imdbID}}" class="btn btn-default">Edit</a>
+      <a href="#" class="btn btn-default">Delete</a>
+    </div>
+  </div>
+</div>
+<script src="js/services/catalogService.js"></script>
+<script src="js/controller/browse.js"></script>
+</body>
+
+</html>
+

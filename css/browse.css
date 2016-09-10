@@ -1,0 +1,80 @@
+.catalog {
+  margin-left: 3em;
+  margin-right: 3em;
+  padding: 1em;
+}
+
+.movie {
+  height: 20em;
+  width: 20em;
+  float: left;
+  padding: 1em;
+}
+
+.poster {
+  height: 90%;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.poster:hover {
+  overflow: visible;
+  transform: scale(1.25);
+}
+
+.movie img {
+  width:100%;
+}
+
+.pager li>a, .pager li>span {
+  background-color: black;
+  color: saddlebrown;
+  margin: 1em;
+
+}
+
+.pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span {
+  background-color: black;
+}
+
+.pager li>a:hover {
+  background-color: gray;
+}
+
+.pager li > a:focus {
+  background-color: black;
+}
+
+.movie-details {
+  position: fixed;
+  left: 10em;
+  right: 20em;
+  top: 20em;
+  height: auto;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.71);
+  display: none;
+}
+
+.movie-details.enabled {
+  display: block;
+}
+
+.movie-details .glyphicon {
+  float: right;
+  cursor: pointer;
+}
+
+.admin-actions {
+  display: none;
+}
+
+.admin-actions.enabled {
+  display: block;
+}
+
+.admin-actions a {
+  background-color: black;
+  padding: 0.5em;
+  color: cadetblue;
+}

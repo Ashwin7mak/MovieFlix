@@ -1,0 +1,111 @@
+body {
+  background-color: #060630;
+  color: white;
+
+}
+
+header {
+  height: 4em;
+  background-color:rgba(3, 3, 20, 0.85);
+}
+
+header div {
+  float: left;
+  padding: 1em;
+}
+
+header .search {
+  float: right;
+  padding: 0;
+  margin-top: 0.25em;
+}
+
+header .search:before {
+  margin-top: 0.5em;
+  position: absolute;
+  right: 0.5em;
+}
+
+header .search input {
+  width: 15em;
+  height: 2em;
+  background-color: grey;
+}
+
+header .user {
+  float: right;
+
+}
+
+.logo {
+  color: red;
+  font-size: large;
+  font-weight: bold;
+}
+
+header .browse span:hover, header .user a:hover {
+  background-color: #4c4c4c;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0em;
+}
+
+.btn-primary {
+  background-color: #060606;
+  border: none;
+}
+
+.btn-group button:hover, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+  background-color: #4c4c4c;
+}
+
+header .btn-group button {
+  height: 100%;
+}
+
+.starRating:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('../img/star-off.png');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('../img/star-on.png');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old):not(.disabled) > label:hover:before,
+.starRating:not(old):not(.disabled) > label:hover ~ label:before,
+.starRating.disabled:not(old) > :checked ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
+
+.container button {
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>MovieFlix - Add/Edit Title</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="admin" ng-controller="adminCtrl">
+<header>
+  <div class="logo">MOVIEFLIX</div>
+  <div class="btn-group" uib-dropdown>
+    <button id="btn-browse" type="button" class="btn btn-primary">
+      Browse <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+      <li role="menuitem"><a href="browse.html">Movies</a></li>
+      <li role="menuitem"><a href="browse.html">TV Series</a></li>
+      <li class="divider"></li>
+      <li role="menuitem"><a href="browse.html">Top Rated Movies</a></li>
+      <li role="menuitem"><a href="browse.html">Top Rated TV Series</a></li>
+    </ul>
+  </div>
+  <div class="btn-group" uib-dropdown>
+    <button id="btn-sort" type="button" class="btn btn-primary" uib-dropdown-toggle>
+      Sort <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+      <li role="menuitem"><a href="browse.html">IMDb Rating</a></li>
+      <li role="menuitem"><a href="browse.html">Year</a></li>
+      <li role="menuitem"><a href="browse.html">IMDb Votes</a></li>
+    </ul>
+  </div>
+  <div class="user"><a href="signin.html">Log out</a></div>
+  <div class="search glyphicon glyphicon-search"><input type="search" placeholder="Search Titles, Genres, Years"/></div>
+</header>
+
+<div class="container">
+  <form class="form-horizontal" action="browse.html">
+    <h3>Add/Edit Title:</h3>
+
+    <div class="form-group">
+      <label for="inputTitle" class="col-sm-2 control-label">Title</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputTitle" class="form-control" name="Title" ng-model="movie.Title" placeholder="Title"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputYear" class="col-sm-2 control-label">Year</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputYear" class="form-control" name="Year" ng-model="movie.Year" placeholder="Year"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputRated" class="col-sm-2 control-label">Rated</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputRated" class="form-control" name="Rated" ng-model="movie.Rated" placeholder="Rated"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputReleased" class="col-sm-2 control-label">Released</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputReleased" class="form-control" name="Released" ng-model="movie.Released" placeholder="Released"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputRuntime" class="col-sm-2 control-label">Runtime</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputRuntime" class="form-control" name="Runtime" ng-model="movie.Runtime" placeholder="Runtime"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputGenre" class="col-sm-2 control-label">Genre</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputGenre" class="form-control" name="Genre" ng-model="movie.Genre" placeholder="Genre"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputDirector" class="col-sm-2 control-label">Director</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputDirector" class="form-control" name="Director" ng-model="movie.Director" placeholder="Director"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputActors" class="col-sm-2 control-label">Actors</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputActors" class="form-control" name="Actors" ng-model="movie.Actors" placeholder="Actors"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPlot" class="col-sm-2 control-label">Plot</label>
+      <div class="col-sm-8">
+        <textarea id="inputPlot" class="form-control" ng-model="movie.Plot" placeholder="Plot"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputLanguage" class="col-sm-2 control-label">Language</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputLanguage" class="form-control" name="Language" ng-model="movie.Language" placeholder="Language"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputAwards" class="col-sm-2 control-label">Awards</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputAwards" class="form-control" name="Awards" ng-model="movie.Awards" placeholder="Awards"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPoster" class="col-sm-2 control-label">Poster</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputPoster" class="form-control" name="Poster" ng-model="movie.Poster" placeholder="Poster"/>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputimdbRating" class="col-sm-2 control-label">imdbRating</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputimdbRating" class="form-control" name="imdbRating" ng-model="movie.imdbRating" placeholder="imdbRating"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputType" class="col-sm-2 control-label">Type</label>
+      <div class="col-sm-8">
+        <select id="inputType" class="form-control" name="Type" ng-model="movie.Type">
+          <option value="movie">Movie</option>
+          <option value="series">TV Series</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputMovieFlixRating" class="col-sm-2 control-label">MovieFlixRating</label>
+      <div class="col-sm-8">
+        <input type="text" id="inputMovieFlixRating" class="form-control" name="MovieFlixRating" ng-model="movie.MovieFlixRating" placeholder="MovieFlixRating"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src="js/services/catalogService.js"></script>
+<script src="js/controller/admin.js"></script>
+</body>
+
+</html>

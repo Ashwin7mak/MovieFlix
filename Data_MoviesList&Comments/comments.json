@@ -1,0 +1,14 @@
+[
+  {
+    "rating": 4,
+    "text": "Great movie!"
+  },
+  {
+    "rating": 1,
+    "text": "Hated it"
+  },
+  {
+    "rating": 3,
+    "text": "Good movie, but would not watch again"
+  }
+]
