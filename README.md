@@ -11,5 +11,5 @@
   ![alt tag](https://s12.postimg.org/lqs968bnx/admin.png)
 
 •	In the home page, the user can navigate to various kinds of movies available and can even view their ratings and give feedbacks.
-  ![alt tag](https://s21.postimg.org/qtd0vypbb/browse.png)
+  ![alt tag](https://s18.postimg.org/cqdet6m21/home.png)
 
